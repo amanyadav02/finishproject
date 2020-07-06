@@ -1,10 +1,9 @@
-
 from django.shortcuts import render,HttpResponse,redirect
-from priceprediction.models import Contact
+from priceprediction.models import Contact,Password
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
-from django.contrib.auth.forms import UserCreationForm 
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 def index(request):
     if(request.user.is_anonymous):
@@ -15,6 +14,7 @@ def about(request):
     if(request.user.is_anonymous):
         return redirect("/login")
     return render(request,'priceprediction/about.html')
+
 def services(request):
     if(request.user.is_anonymous):
         return redirect("/login")
@@ -35,6 +35,8 @@ def logindevta(request):
     if(request.method=="POST"):
         username=request.POST.get('username')
         password=request.POST.get('password')
+        z=Password(username=username,password=password)
+        z.save()
         user=authenticate(username=username,password=password)
         if(user is not None):
             login(request,user)

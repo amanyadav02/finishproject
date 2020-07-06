@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,6 +52,119 @@
           <p>Note-1 ->If your password created successfully you will directly redirected to login page </p>
           <p>Note-2 -> If using phone then please view in desktop mode</p>
 
+    </div>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        .regis{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            background-color: gray;
+            height: 100vh;
+            color: black;
+
+        }
+
+        .regis a{
+            margin: 10px;
+            font-size: 20px;
+            color: red;
+        }
+
+        .regis a:hover{
+            color: black;
+        }
+        .reg{
+            color: white;
+        }
+        body h2{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color:black;
+        top: 0px;
+        background-color: gray;
+        margin: 0px;
+    }
+    p{
+        color:black;
+        font-size: 20px;
+        padding: 5px;
+        margin: 3px;
+    }
+    .reg li{
+        list-style: none;
+    }
+    .jruri{
+        /* display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content:center ;
+        align-items: center; */
+        display: block;
+        margin: auto;
+        padding: 25px;
+    }
+    .reg{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .formhai{
+        width: 30%;
+        border: 2px solid black;
+        display: block;
+        margin: auto;
+        background-color: green;
+        border-radius: 10px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <h2>This is  the best website for the Price prediction of houses </h2>
+    <div class="regis">
+        <h1>This Is Registration Form</h1>
+     <!-- <form class="reg" method="get" action="{% url 'register' %}" >
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">submit</button>
+          </form>  -->
+          <div class="formhai">
+          <form class="reg" method="get" action="/register/">
+            <input type="hidden" name="csrfmiddlewaretoken" value="W28v52DSDtXVhHbQpSX2BzQiBwp7Ey0GXSh90tl83txiohalNcwwl2RQG93fzrQ0">
+            <div class="jruri">
+            <div><p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username"></p></div> <div> <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span></div>
+        </div>
+            <div class="jruri">
+
+                <div><p><label for="id_password1">Password:</label> <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1"></p></div><div><span class="helptext"><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></span></div>
+
+            </div>
+
+    <div class="jruri">
+        <div>
+            <p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2"></p></div> <div> <span class="helptext">Enter the same password as before, for verification.</span></div>
+
+        </div>
+            <button type="submit">submit</button>
+          </form>
+        </div>
+          <a href="{% url 'login' %}">click here to go login page</a>
+          <p>Note -> If Your password created successfully you will be redirected to login page</p>
+          <p>Note -> If using phone then please view in desktop mode</p>
     </div>
 </body>
 </html>
